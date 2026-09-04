@@ -1,0 +1,39 @@
+#SOLICITE 10 NUMEROS A SEREM GUARDADOS EM UMA LISTA
+numeros = []
+ for i in range(10):
+  numero=int(input("digite um número:"))
+  numeros.append(numero)
+
+ >>> for i in range(10):
+...   numero=int(input("digite um número:"))
+...   numeros.append(numero)
+... # ANALISE A ENTRADA COM
+... # O MAIOR NUMERO = MAIOR
+... # O MENOR NUMERO = MENOR
+... # EXECUTE AS SOMAS DOS NUMEROS =SOMA
+... # DEPOIS CALCULE A MEDIA NESSE FORMATO MEDIA= SOMA/10, EXEMPLO:
+...
+... maior=max(numeros)
+... menor=min(numeros)
+... soma=sum(numeros)
+... media=soma/len(numeros)
+...
+... #CONTAR PARES E CONTAR IMPARES,PARA CADA NUMERO DA LISTA SE DIVISIVEL POR 2 PARES SENAO IMPARES
+... pares=0
+... impares=0
+...
+... for numero in numeros:
+...     if numero % 2 == 0:
+...         pares+= 1
+...     else:
+...        impares +=1
+...
+... print("RESULTADOS")
+... print("MAIOR NUMERO:",maior)
+... print("MENOR NUMERO:",menor)
+... print("SOMA:",soma)
+... print("MEDIA:",media)
+... print("QUANTIDADE DE PARES:",pares)
+... print("QUANTIDADE DE IMPARES:",impares)
+
+ 
