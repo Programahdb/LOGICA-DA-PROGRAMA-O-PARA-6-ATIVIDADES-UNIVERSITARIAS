@@ -1,0 +1,45 @@
+#IDEIA PRINCIPAL É CAIXA TEM NOTAS DE 200,100,50,20,10,5,2.
+#SE SOLICITADO VALOR MENOR QUE 2 INFORMAR QUE O CAIXA SO TEM NOTAS INTEIRAS 
+
+# Simulador de caixa eletrônico
+# Notas disponíveis: 200, 100, 50, 20, 10, 5, 2
+
+def caixa_eletronico(valor):
+    """
+    Calcula a quantidade de notas necessárias para o saque.
+    Retorna um dicionário com a quantidade de cada nota.
+    """
+    notas_disponiveis = [200, 100, 50, 20, 10, 5, 2]
+    resultado = {}
+
+    for nota in notas_disponiveis:
+        qtd, valor = divmod(valor, nota)  # divmod retorna (quociente, resto)
+        if qtd > 0:
+            resultado[nota] = qtd
+
+    return resultado
+
+
+def main():
+    try:
+        valor_saque = int(input("Digite o valor do saque: R$ "))
+
+        # Validação de valor mínimo
+        if valor_saque < 2:
+            print("O caixa só possui notas inteiras a partir de R$ 2.")
+            return
+
+        # Calcula as notas
+        notas = caixa_eletronico(valor_saque)
+
+        # Exibe o resultado
+        print("\nNotas fornecidas:")
+        for nota, qtd in notas.items():
+            print(f"R$ {nota}: {qtd} nota(s)")
+
+    except ValueError:
+        print("Entrada inválida. Digite apenas números inteiros.")
+
+
+if __name__ == "__main__":
+    main()
