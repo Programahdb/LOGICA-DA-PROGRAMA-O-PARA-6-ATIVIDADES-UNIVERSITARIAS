@@ -1,0 +1,40 @@
+#CRIAR UMA LISTA DE PESSOAS, REPETIR OS PEDIDOS 5 VEZES.
+#PEDIR NOME
+#PEDIR IDADE 
+#PEDIR CIDADE, EXEMPLO:
+
+pessoas = 
+for i in range(5):
+  print(f"\ncadastro da pessoa {i+1}")
+
+  nome= input("nome:")
+  idade= int(input("idade:"))
+  cidade= input("cidade:")
+
+pessoa = {
+  "nome":nome,
+  "cidade":cidade,
+  "idade":idade
+}
+ pessoas.append(pessoa)
+print("\n---PESSOAS CADASTRADAS---")
+
+for pessoa in pessoas:
+  print("nome:",pessoa["nome"])
+  print("idade:",pessoa["idade"])
+  print("cidade:",pessoa["cidade"])
+  print()
+
+mais_velha= max(pessoas,key=lambda pessoa:
+pessoa["idade"])
+mais_jovem= min(pessoas,key=lambda pessoa:
+pessoa["idade"])
+
+soma_idades =sum(pessoa["idade"] for pessoa in
+pessoas)
+media_idade =soma_idades/len(pessoas)
+
+
+print("pessoas mais velhas:",mais_velha["nome"])
+print("pessoas mais jovens:",mais_jovem["nome"])
+print("media de idade:",media_idade)
